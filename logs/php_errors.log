@@ -1,0 +1,104 @@
+[02-May-2025 10:07:08 Europe/Berlin] API Error in get_user_data.php: Connection refused
+[02-May-2025 10:07:08 Europe/Berlin] API Error in get_user_achievements.php: Connection refused
+[02-May-2025 10:11:06 Europe/Berlin] API Error in get_user_data.php: Connection refused
+[02-May-2025 10:15:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/includes/db_connection.php:13
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_achievements.php(23): require_once()
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/includes/db_connection.php on line 13
+[02-May-2025 10:15:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/includes/db_connection.php:13
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php(23): require_once()
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/includes/db_connection.php on line 13
+[02-May-2025 10:20:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function pg_connect() in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/includes/db_connection.php:13
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php(23): require_once()
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/includes/db_connection.php on line 13
+[02-May-2025 10:25:17 Europe/Berlin] PHP Warning:  Undefined property: PDO::$connect_error in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php on line 29
+[02-May-2025 10:25:17 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::bind_param() in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php:42
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php on line 42
+[02-May-2025 10:28:27 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Connection refused in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php:30
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php(30): mysqli->__construct('localhost', 'postgres', Object(SensitiveParameterValue), 'cervelingua')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/AntwortenTrainer/api/get_user_data.php on line 30
+[04-May-2025 19:13:49 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:13:53 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:13:57 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:14:04 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:14:04 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:14:06 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:14:07 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:14:08 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:15:12 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:15:14 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:15:15 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:15:16 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:15:17 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:16:11 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:21:12 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:26:31 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:29:29 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:29:47 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[04-May-2025 19:29:54 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30

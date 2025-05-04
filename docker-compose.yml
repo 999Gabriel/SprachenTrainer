@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  web:
+    image: php:8.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db  # This is the key change - using the service name "db" instead of "localhost"
+      - DB_NAME=cervelingua
+      - DB_USER=postgres
+      - DB_PASSWORD=macintosh
+    command: >
+      bash -c "apt-get update &&
+               apt-get install -y libpq-dev zip unzip git &&
+               docker-php-ext-install pdo pdo_pgsql pgsql &&
+               a2enmod rewrite &&
+               chown -R www-data:www-data /var/www/html &&
+               chmod -R 755 /var/www/html &&
+               apache2-foreground"
+    restart: unless-stopped
+  
+  db:
+    image: postgres:17
+    environment:
+      - POSTGRES_DB=cervelingua
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=macintosh
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
