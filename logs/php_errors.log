@@ -102,3 +102,55 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 08:46:29 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 10:04:27 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 10:05:02 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 10:05:38 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:30:21 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:30:27 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:30:29 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:30:42 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:31:09 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:31:24 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:31:35 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:32:30 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30
+[05-May-2025 11:32:33 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/html/api/get_user_data.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/api/get_user_data.php on line 30

@@ -173,3 +173,41 @@ $page_title = "Camera Learning";
     <script src="js/camera.js"></script>
 </body>
 </html>
+
+// Find the AJAX request that handles saving progress
+// This is likely in a JavaScript section that looks something like this:
+<script>
+    function markWordAsLearned(word) {
+        // Add error logging to see what's happening
+        console.log('Marking word as learned:', word);
+        
+        $.ajax({
+            url: 'api/save-word-progress.php',
+            type: 'POST',
+            data: {
+                word: word,
+                action: 'mark_learned'
+            },
+            success: function(response) {
+                console.log('Save progress response:', response);
+                try {
+                    const data = JSON.parse(response);
+                    if (data.success) {
+                        showNotification('Word marked as learned! +' + data.xp + ' XP', 'success');
+                        updateXpCounter(data.xp);
+                    } else {
+                        console.error('Error details:', data.error);
+                        showNotification('Error saving progress: ' + data.error, 'error');
+                    }
+                } catch (e) {
+                    console.error('Invalid JSON response:', response, e);
+                    showNotification('Error saving progress. Please try again.', 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX error:', status, error, xhr.responseText);
+                showNotification('Error saving progress. Please check your connection.', 'error');
+            }
+        });
+    }
+</script>

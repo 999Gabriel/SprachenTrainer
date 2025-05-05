@@ -116,7 +116,7 @@ $page_title = "Practice Spanish";
                 <a href="lessons.php" class="nav-link">Lessons</a>
                 <a href="practice.php" class="nav-link active">Practice</a>
                 <a href="ai-conversation.php" class="nav-link">AI Conversation</a>
-                <a href="camera-learning.php" class="nav-link">Camera Learning</a>
+                <a href="camera-learning.php" class="nav-link">Visual Learning</a>
             </div>
             <div class="cta-buttons user-menu-container">
                 <!-- <div class="theme-toggle">

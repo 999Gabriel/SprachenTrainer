@@ -169,3 +169,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// Add this to your existing dashboard.js file or create a new one
+
+// Function to update XP display
+function updateXpDisplay(earnedXp) {
+    // Get current values
+    let currentXp = parseInt(document.getElementById('current-xp').textContent);
+    let xpForNextLevel = parseInt(document.getElementById('xp-for-next-level').textContent);
+    
+    // Update XP
+    let newXp = currentXp + earnedXp;
+    document.getElementById('current-xp').textContent = newXp;
+    
+    // Update progress bar
+    let progressPercent = Math.min((newXp / xpForNextLevel) * 100, 100);
+    document.getElementById('xp-progress-bar').style.width = progressPercent + '%';
+    document.getElementById('xp-progress-bar').setAttribute('aria-valuenow', newXp);
+    
+    // Update XP needed for next level
+    document.getElementById('xp-needed').textContent = xpForNextLevel - newXp;
+    
+    // Check if level up (if needed)
+    if (newXp >= xpForNextLevel) {
+        // You could add a level-up animation or notification here
+        console.log('Level up!');
+    }
+}
+
+// Listen for custom events from your exercise pages
+document.addEventListener('xpEarned', function(event) {
+    updateXpDisplay(event.detail.xp);
+});

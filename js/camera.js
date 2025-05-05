@@ -344,7 +344,9 @@ function checkAnswer() {
     const userAnswer = document.getElementById('userAnswer').value.trim().toLowerCase();
     const correctAnswer = currentChallenge.translation.toLowerCase();
     
-    if (userAnswer === correctAnswer) {
+    const isCorrect = userAnswer === correctAnswer;
+    
+    if (isCorrect) {
         // Correct answer
         showNotification('¡Correcto! Great job!', 'success');
         
@@ -361,10 +363,15 @@ function checkAnswer() {
         // Hide challenge
         document.getElementById('learningChallenge').style.display = 'none';
         
-        // Save XP to server
-        saveProgress({
-            activity_details: `Learned "${currentChallenge.label}" (${currentChallenge.translation})`
-        });
+        // Save progress
+        saveProgress(currentChallenge.translation)
+            .then(response => {
+                console.log('Word progress saved:', response);
+            })
+            .catch(error => {
+                console.error('Error saving word progress:', error);
+                showNotification('Error saving progress: ' + error.message, 'error');
+            });
     } else {
         // Check for close match (simple implementation)
         if (isCloseMatch(userAnswer, correctAnswer)) {
@@ -711,3 +718,47 @@ function showAchievementNotification(achievement) {
         }
     }, 5000);
 }
+
+// Find the saveProgress function and update it
+function saveProgress(word) {
+    console.log('Saving progress for word:', word);
+    
+    return new Promise((resolve, reject) => {
+        // Replace jQuery $.ajax with native fetch
+        fetch('api/save-word-progress.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                word: word,
+                action: 'mark_learned'
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Server responded with status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(response => {
+            console.log('Save progress response:', response);
+            if (response && response.success) {
+                resolve(response);
+            } else {
+                console.error('Error in response:', response);
+                reject(new Error(response.error || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            reject(error);
+        });
+    });
+}
+
+// Remove this duplicate checkAnswer function
+// function checkAnswer(userGuess, correctAnswer) {
+//     // ... existing code ...
+// }
+    

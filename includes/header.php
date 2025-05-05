@@ -83,3 +83,30 @@ if (!defined('APP_URL')) {
             </div>
         </div>
     </nav>
+    // ... existing code ...
+    <script>
+        // User dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const userProfile = document.querySelector('.user-profile');
+            const dropdownMenu = document.querySelector('.user-profile .dropdown-menu');
+
+            if (userProfile && dropdownMenu) {
+                userProfile.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('show');
+                });
+
+                // Hide dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!userProfile.contains(e.target)) {
+                        dropdownMenu.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/user-dropdown.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

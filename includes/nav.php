@@ -12,7 +12,7 @@
             <a href="lessons.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'lessons.php' ? 'active' : ''; ?>">Lessons</a>
             <a href="practice.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'practice.php' ? 'active' : ''; ?>">Practice</a>
             <a href="ai-conversation.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'ai-conversation.php' ? 'active' : ''; ?>">AI Conversation</a>
-            <a href="camera-learning.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'camera-learning.php' ? 'active' : ''; ?>">Start to learn visually!</a>
+            <a href="camera-learning.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'camera-learning.php' ? 'active' : ''; ?>">Visual Learning</a>
         </div>
         <div class="cta-buttons user-menu-container">
             <!-- <div class="theme-toggle">
@@ -45,6 +45,30 @@
         </div>
     </div>
 </nav>
-<script src="js/dark-mode.js"></script>
-<script src="js/user-dropdown.js"></script>
-<script src="js/mobile-nav.js"></script>
+// ... existing code ...
+    <script>
+        // User dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const userProfile = document.querySelector('.user-profile');
+            const dropdownMenu = document.querySelector('.user-profile .dropdown-menu');
+
+            if (userProfile && dropdownMenu) {
+                userProfile.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('show');
+                });
+
+                // Hide dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!userProfile.contains(e.target)) {
+                        dropdownMenu.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/user-dropdown.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>
