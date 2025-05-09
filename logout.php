@@ -8,46 +8,47 @@ if (session_status() == PHP_SESSION_NONE) {
 require_once "includes/config.php";
 require_once "includes/functions.php";
 
+// Store user ID before clearing session (for database cleanup if needed)
+$user_id = $_SESSION['user_id'] ?? null;
+
 // Clear all session variables
 $_SESSION = array();
+session_unset();
 
-// Delete the session cookie if it exists
-if (isset($_COOKIE[session_name()])) {
-    setcookie(session_name(), '', time() - 3600, '/');
+// Delete the session cookie
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000, '/');
 }
 
-// Delete remember me cookie if it exists
-if (isset($_COOKIE['remember_token'])) {
-    // Remove token from database if the table exists
+// Clear any active sessions from the database for this user
+if ($user_id) {
     try {
-        // Check if the remember_tokens table exists
-        $table_check = $pdo->query("SELECT EXISTS (
-            SELECT FROM information_schema.tables 
-            WHERE table_schema = 'public' 
-            AND table_name = 'remember_tokens'
-        )");
-        
-        $table_exists = $table_check->fetchColumn();
-        
-        if ($table_exists && isset($_COOKIE['remember_token'])) {
-            $token = $_COOKIE['remember_token'];
-            $stmt = $pdo->prepare("DELETE FROM remember_tokens WHERE token = :token");
-            $stmt->bindParam(':token', $token);
-            $stmt->execute();
-        }
+        $stmt = $pdo->prepare("UPDATE users SET last_login = NULL WHERE user_id = :user_id");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
     } catch (PDOException $e) {
-        // Log error but continue with logout
-        error_log("Error removing remember token: " . $e->getMessage());
+        error_log("Error updating user session: " . $e->getMessage());
     }
-    
-    // Delete the cookie
-    setcookie('remember_token', '', time() - 3600, '/');
 }
 
 // Destroy the session
 session_destroy();
 
-// Redirect to login page
+// Force a new session to start
+session_start();
+session_regenerate_id(true);
+session_destroy();
+
+// Clear any remaining cookies
+foreach ($_COOKIE as $name => $value) {
+    setcookie($name, '', time() - 3600, '/');
+}
+
+// Redirect with a cache-control header
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 header("Location: login.php");
-exit;
+exit();
 ?>
