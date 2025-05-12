@@ -289,3 +289,70 @@
         gap: 5px;
     }
 }
+
+
+/* Games Section on Lessons Page */
+.lessons-games-section {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: var(--card-bg-alt);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.lessons-games-section h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+.lessons-games-section p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.lessons-games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+/* Import game card styles from games.css */
+.lessons-games-grid .game-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.lessons-games-grid .game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.lessons-games-grid .game-card:nth-child(1) {
+    border-left-color: #4a6fa5; /* Blue */
+}
+
+.lessons-games-grid .game-card:nth-child(2) {
+    border-left-color: #ff7043; /* Orange */
+}
+
+.lessons-games-grid .game-card:nth-child(3) {
+    border-left-color: #66bb6a; /* Green */
+}
+
+/* Responsive adjustments for games section */
+@media (max-width: 768px) {
+    .lessons-games-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -8,6 +8,8 @@ REM Prüfen, ob Docker läuft
 docker --version > nul 2>&1
 if %ERRORLEVEL% NEQ 0 (
     echo ❌ Docker ist nicht installiert oder nicht im PATH.
+    echo.
+    pause
     exit /b 1
 )
 
@@ -15,6 +17,8 @@ REM Prüfen, ob docker-compose verfügbar ist
 docker-compose --version > nul 2>&1
 if %ERRORLEVEL% NEQ 0 (
     echo ❌ docker-compose ist nicht installiert oder nicht im PATH.
+    echo.
+    pause
     exit /b 1
 )
 

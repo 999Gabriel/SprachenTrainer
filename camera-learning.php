@@ -174,8 +174,7 @@ $page_title = "Camera Learning";
 </body>
 </html>
 
-// Find the AJAX request that handles saving progress
-// This is likely in a JavaScript section that looks something like this:
+
 <script>
     function markWordAsLearned(word) {
         // Add error logging to see what's happening

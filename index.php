@@ -49,7 +49,7 @@ $page_title = "Home";
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="animated-title">Learn Spanish <span class="gradient-text">Smarter</span>, Not Harder</h1>
+                <h1 class="animated-title">Learn Spanish <span class="gradient-text">Smarter</span>, Not Harder with AI</h1>
                 <p class="hero-subtitle">CerveLingua combines neuroscience and AI to create a personalized Spanish learning experience that adapts to your brain's unique learning style.</p>
                 <div class="hero-cta">
                     <a href="signup.php" class="btn btn-primary btn-lg">Start Learning Free</a>
@@ -60,15 +60,15 @@ $page_title = "Home";
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">25+</span>
-                        <span class="stat-text">Languages</span>
+                        <span class="stat-number">5+</span>
+                        <span class="stat-text">Games</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">2M+</span>
+                        <span class="stat-number">100+</span>
                         <span class="stat-text">Active Learners</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">95%</span>
+                        <span class="stat-number">90%</span>
                         <span class="stat-text">Success Rate</span>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ $page_title = "Home";
                     <img src="img/CerveLingua_Avatar.png" alt="CerveLingua App" class="main-image">
                     <div class="floating-card card-1">
                         <i class="fas fa-brain"></i>
-                        <span>Neuroscience-based</span>
+                        <span>Gamified-learning</span>
                     </div>
                     <div class="floating-card card-2">
                         <i class="fas fa-robot"></i>
@@ -101,7 +101,7 @@ $page_title = "Home";
     <!-- Trusted By Section -->
     <section class="trusted-by">
         <div class="container">
-            <h2>Trusted by leading organizations</h2>
+            <h2>Sponsored by a leading organization</h2>
             <div class="logos-container">
                 <img src="img/htl_anich.png" alt="Company 1" class="company-logo">
             </div>
@@ -181,7 +181,7 @@ $page_title = "Home";
                 <br>
                 <br>
                 <br>
-                <h2>How <span class="gradient-text">CerveLingua</span> Works</h2>
+                <h1>How <span class="gradient-text">CerveLingua</span> Works</h1>
                 <p>Our 4-step process makes language learning effective and enjoyable</p>
             </div>
             <div class="steps-container">
