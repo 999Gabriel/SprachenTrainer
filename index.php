@@ -46,6 +46,12 @@ $page_title = "Home";
     </nav>
 
     <!-- Hero Section - Update hero image -->
+    <div class="wave-effect">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+</div>
     <section class="hero">
         <div class="container">
             <div class="hero-content">

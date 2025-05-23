@@ -90,10 +90,103 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--gray-800);
+    color: var(--white);
     line-height: 1.6;
-    background-color: var(--white);
+    background: linear-gradient(45deg, #6a00ff, #ff416c, #ff9a00, #0055ff);
+    background-size: 400% 400%;
+    position: relative;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ff416c' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%236a00ff' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='50' cy='50' r='25' opacity='0.05'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)'/%3E%3C/svg%3E");
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+    animation: aurora-waves 15s ease infinite;
+}
+
+@keyframes aurora-waves {
+    0% {
+        transform: translateY(0) scaleY(1);
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        transform: translateY(-1%) scaleY(1.05);
+        filter: hue-rotate(15deg);
+    }
+    50% {
+        transform: translateY(0) scaleY(1);
+        filter: hue-rotate(0deg);
+    }
+    75% {
+        transform: translateY(1%) scaleY(0.95);
+        filter: hue-rotate(-15deg);
+    }
+    100% {
+        transform: translateY(0) scaleY(1);
+        filter: hue-rotate(0deg);
+    }
+}
+
+/* Polarlicht-Wellen-Effekt */
+.wave-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    border-radius: 40%;
+    animation: wave-rotate 20s linear infinite;
+    opacity: 0.2;
+}
+
+.wave1 {
+    background: radial-gradient(ellipse at center, rgb(106, 0, 255) 0%, rgba(255, 0, 0, 0.864) 70%);
+    animation-duration: 25s;
+}
+
+.wave2 {
+    background: radial-gradient(ellipse at center, rgba(230, 28, 75, 0.818) 0%, rgba(255, 65, 109, 0.697) 70%);
+    animation-duration: 30s;
+    animation-delay: -3s;
+}
+
+.wave3 {
+    background: radial-gradient(ellipse at center, rgba(60, 0, 255, 0.988) 0%, rgba(255, 0, 255, 0.966) 70%);
+    animation-duration: 35s;
+    animation-delay: -6s;
+}
+
+.wave4 {
+    background: radial-gradient(ellipse at center, rgba(0, 64, 255, 0.977) 0%, rgba(255, 0, 0, 0.9) 70%);
+    animation-duration: 40s;
+    animation-delay: -9s;
+}
+
+@keyframes wave-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 a {
@@ -137,11 +230,12 @@ section {
     font-size: var(--text-4xl);
     margin-bottom: var(--spacing-4);
     font-weight: 700;
+    color: var(--white);
 }
 
 .section-header p {
     font-size: var(--text-lg);
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .btn {
@@ -219,7 +313,7 @@ section {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
@@ -242,7 +336,7 @@ section {
     align-items: center;
     font-weight: 700;
     font-size: var(--text-xl);
-    color: var(--gray-900);
+    color: var(--white);
 }
 
 .logo img {
@@ -260,7 +354,7 @@ section {
 .nav-link {
     position: relative;
     font-weight: 500;
-    color: var(--gray-700);
+    color: var(--white);
     padding: var(--spacing-2) 0;
 }
 
@@ -298,7 +392,7 @@ section {
 .hero {
     padding-top: 120px;
     padding-bottom: var(--spacing-20);
-    background: linear-gradient(135deg, var(--gray-50), var(--white));
+    background: transparent;
     overflow: hidden;
 }
 
@@ -326,7 +420,7 @@ section {
 
 .hero-subtitle {
     font-size: var(--text-xl);
-    color: var(--gray-600);
+    color: var(--white); /* Changed from var(--gray-600) to var(--black) */
     margin-bottom: var(--spacing-8);
     opacity: 0;
     transform: translateY(20px);
@@ -396,11 +490,18 @@ section {
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
+    color: var(--black); /* Add this line to make text visible */
 }
 
 .floating-card i {
     font-size: var(--text-xl);
-    color: var(--primary-color);
+    color: var(--black);.floating-card i {
+    font-size: var(--text-xl);
+    color: var(--black);
+}.floating-card i {
+    font-size: var(--text-xl);
+    color: var(--black);
+}
 }
 
 .card-1 {
@@ -439,13 +540,13 @@ section {
 /* Trusted By Section */
 .trusted-by {
     padding: var(--spacing-12) 0;
-    background-color: var(--white);
+    background-color: transparent;
     text-align: center;
 }
 
 .trusted-by h2 {
     font-size: var(--text-xl);
-    color: var(--gray-600);
+    color: var(--white);
     margin-bottom: var(--spacing-8);
 }
 
@@ -469,7 +570,7 @@ section {
 
 /* Features Section */
 .features {
-    background-color: var(--gray-50);
+    background-color: transparent;
     padding: var(--spacing-20) 0;
 }
 
@@ -480,12 +581,15 @@ section {
 }
 
 .feature-card {
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-8);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
     text-align: center;
+    color: var(--white);
 }
 
 .feature-card:hover {
@@ -513,16 +617,17 @@ section {
     font-size: var(--text-xl);
     margin-bottom: var(--spacing-3);
     font-weight: 600;
+    color: var(--white);
 }
 
 .feature-card p {
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* How It Works Section */
 .how-it-works {
     padding: var(--spacing-20) 0;
-    background-color: var(--white);
+    background-color: transparent;
 }
 
 .steps-container {
@@ -582,7 +687,7 @@ section {
 
 /* Languages Section */
 .languages {
-    background-color: var(--gray-50);
+    background-color: transparent;
     padding: var(--spacing-20) 0;
 }
 
@@ -598,7 +703,9 @@ section {
 }
 
 .language-card {
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-6);
     box-shadow: var(--shadow-md);
@@ -608,6 +715,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--white);
 }
 
 .language-card:hover {
@@ -626,6 +734,7 @@ section {
 .language-card h3 {
     font-size: var(--text-lg);
     font-weight: 600;
+    color: var(--white);
 }
 
 .more-languages {
@@ -652,7 +761,7 @@ section {
 /* Testimonials Section */
 .testimonials {
     padding: var(--spacing-20) 0;
-    background-color: var(--white);
+    background-color: transparent;
 }
 
 .testimonial-slider {
@@ -664,11 +773,14 @@ section {
 
 .testimonial-card {
     flex: 0 0 calc(33.333% - var(--spacing-4));
-    background-color: var(--gray-50);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-8);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
+    color: var(--white);
 }
 
 .testimonial-card:hover {
@@ -689,6 +801,7 @@ section {
 .testimonial-content p {
     font-style: italic;
     margin-bottom: var(--spacing-4);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .rating {
@@ -714,7 +827,7 @@ section {
 
 .author-info p {
     font-size: var(--text-sm);
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .testimonial-controls {
@@ -764,7 +877,7 @@ section {
 
 /* Pricing Section */
 .pricing {
-    background-color: var(--gray-50);
+    background-color: transparent;
     padding: var(--spacing-20) 0;
 }
 
@@ -844,13 +957,16 @@ input:checked + .slider:before {
 }
 
 .pricing-card {
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-8);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    color: var(--white);
 }
 
 .pricing-card:hover {
@@ -883,7 +999,7 @@ input:checked + .slider:before {
     text-align: center;
     margin-bottom: var(--spacing-6);
     padding-bottom: var(--spacing-6);
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .pricing-header h3 {
@@ -901,13 +1017,13 @@ input:checked + .slider:before {
 .currency {
     font-size: var(--text-xl);
     font-weight: 600;
-    color: var(--gray-700);
+    color: var(--white);
 }
 
 .amount {
     font-size: var(--text-5xl);
     font-weight: 800;
-    color: var(--gray-900);
+    color: var(--white);
     margin: 0 var(--spacing-1);
 }
 
@@ -917,7 +1033,7 @@ input:checked + .slider:before {
 
 .period {
     font-size: var(--text-base);
-    color: var(--gray-600);
+    color: var(--white);
 }
 
 .pricing-features {
@@ -934,6 +1050,7 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     gap: var(--spacing-3);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .pricing-features li i {
@@ -941,7 +1058,7 @@ input:checked + .slider:before {
 }
 
 .pricing-features li.disabled {
-    color: var(--gray-400);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .pricing-features li.disabled i {
@@ -1126,6 +1243,59 @@ input:checked + .slider:before {
     border-radius: var(--radius-md);
     font-size: var(--text-sm);
     cursor: pointer;
+}
+
+/* Welleneffekt für Karten */
+.feature-card, .language-card, .testimonial-card, .pricing-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before, .language-card::before, .testimonial-card::before, .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 65, 108, 0.1),
+        rgba(255, 106, 0, 0.1),
+        rgba(255, 154, 0, 0.1),
+        rgba(106, 0, 255, 0.1),
+        rgba(0, 85, 255, 0.1)
+    );
+    transform-origin: center;
+    animation: wave 8s linear infinite;
+    z-index: -1;
+    border-radius: inherit;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Unterschiedliche Animationszeiten für verschiedene Kartentypen */
+.feature-card::before {
+    animation-duration: 12s;
+}
+
+.language-card::before {
+    animation-duration: 15s;
+}
+
+.testimonial-card::before {
+    animation-duration: 18s;
+}
+
+.pricing-card::before {
+    animation-duration: 20s;
 }
 
 /* Animations */
@@ -1414,6 +1584,22 @@ input:checked + .slider:before {
     
     .mobile-menu {
         background-color: var(--gray-900);
+    }
+    
+    .feature-card, .language-card, .testimonial-card, .pricing-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--white);
+    }
+    
+    .feature-card h3, .language-card h3, .testimonial-card h3, .pricing-card h3,
+    .section-header h2, .animated-title {
+        color: var(--white);
+    }
+    
+    .feature-card p, .testimonial-content p, .section-header p, .hero-subtitle {
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
