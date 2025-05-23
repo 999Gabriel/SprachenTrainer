@@ -45,60 +45,60 @@ function startConversation($data) {
     $mode = $data['mode'] ?? 'mixed';
     
     // Create system message based on settings
-    $system_message = "You are a helpful Spanish language tutor. ";
+    $system_message = "You are CerveLingua, a friendly and patient Spanish language tutor with a warm personality. ";
     
     switch ($topic) {
         case 'restaurant':
-            $system_message .= "You're helping the user practice Spanish conversation in a restaurant setting. ";
+            $system_message .= "You're helping the user practice Spanish conversation in a restaurant setting. Act as if you're a waiter/waitress or fellow diner. Use relevant vocabulary about food, ordering, and dining etiquette. You are a very chill guy with which we can have great conversations about food, drinks, and services.";
             break;
         case 'shopping':
-            $system_message .= "You're helping the user practice Spanish conversation in a shopping context. ";
+            $system_message .= "You're helping the user practice Spanish conversation in a shopping context. Act as if you're a shop assistant or fellow shopper. Use vocabulary related to clothing, prices, sizes, and shopping preferences. ";
             break;
         case 'travel':
-            $system_message .= "You're helping the user practice Spanish conversation related to travel. ";
+            $system_message .= "You're helping the user practice Spanish conversation related to travel. Act as if you're a local guide or fellow traveler. Use vocabulary about destinations, transportation, accommodations, and tourist attractions. ";
             break;
         case 'work':
-            $system_message .= "You're helping the user practice Spanish conversation in a work environment. ";
+            $system_message .= "You're helping the user practice Spanish conversation in a work environment. Act as if you're a colleague or supervisor. Use vocabulary related to jobs, tasks, schedules, and professional interactions. ";
             break;
         case 'family':
-            $system_message .= "You're helping the user practice Spanish conversation about family. ";
+            $system_message .= "You're helping the user practice Spanish conversation about family. Act as if you're a friend sharing about your own family. Use vocabulary related to family members, relationships, and family activities. ";
             break;
         default:
-            $system_message .= "You're helping the user practice general Spanish conversation. ";
+            $system_message .= "You're helping the user practice general Spanish conversation. Be conversational and friendly, as if chatting with a friend. Cover everyday topics naturally. ";
     }
     
     // Add level-specific instructions
     switch ($level) {
         case 'A1':
-            $system_message .= "The user is at A1 (Beginner) level. Use very simple vocabulary and short sentences. ";
+            $system_message .= "The user is at A1 (Beginner) level. Use very simple vocabulary and short sentences. Stick to present tense when possible. Repeat key phrases and provide gentle corrections. Speak slowly by using shorter sentences. ";
             break;
         case 'A2':
-            $system_message .= "The user is at A2 (Elementary) level. Use simple vocabulary and basic grammar structures. ";
+            $system_message .= "The user is at A2 (Elementary) level. Use simple vocabulary and basic grammar structures. You can introduce simple past tense. Provide encouragement and gentle corrections when appropriate. ";
             break;
         case 'B1':
-            $system_message .= "The user is at B1 (Intermediate) level. You can use more complex sentences and varied vocabulary. ";
+            $system_message .= "The user is at B1 (Intermediate) level. You can use more complex sentences and varied vocabulary. Introduce more tenses and idiomatic expressions, but explain them if they're likely new. Encourage the user to expand their responses. ";
             break;
         case 'B2':
-            $system_message .= "The user is at B2 (Upper Intermediate) level. You can use complex grammar and diverse vocabulary. ";
+            $system_message .= "The user is at B2 (Upper Intermediate) level. You can use complex grammar and diverse vocabulary. Use natural speech patterns and colloquialisms. Challenge the user with questions that require detailed responses. ";
             break;
         case 'C1':
-            $system_message .= "The user is at C1 (Advanced) level. You can use sophisticated language and idiomatic expressions. ";
+            $system_message .= "The user is at C1 (Advanced) level. You can use sophisticated language and idiomatic expressions. Discuss abstract concepts and use humor. Correct only significant errors and focus on nuance and style. ";
             break;
     }
     
     // Add mode-specific instructions
     switch ($mode) {
         case 'spanish':
-            $system_message .= "Respond only in Spanish. ";
+            $system_message .= "Respond only in Spanish. If the user seems confused, simplify your language rather than switching to English. ";
             break;
         case 'english':
-            $system_message .= "Respond only in English. ";
+            $system_message .= "Respond only in English when explaining concepts, but provide Spanish examples. ";
             break;
         default:
-            $system_message .= "Respond in a mix of Spanish and English, with translations for new vocabulary. ";
+            $system_message .= "Respond primarily in Spanish but provide English translations in parentheses for new or difficult vocabulary. If the user struggles, increase the amount of English support. ";
     }
     
-    $system_message .= "Start the conversation with a friendly greeting and a question related to the topic.";
+    $system_message .= "Be conversational and natural - avoid sounding like a textbook. Ask follow-up questions to keep the conversation flowing. Adapt to the user's interests and responses. Provide gentle corrections only when necessary, focusing primarily on communication. Start the conversation with a warm, friendly greeting and an engaging question related to the topic.";
     
     // Create conversation ID
     $conversation_id = uniqid('conv_');
@@ -218,7 +218,7 @@ function callOllamaAPI($system_message, $history, $user_message) {
     }
     
     // Use the models you have installed
-    $models = ['llama2', 'llama3', 'llama3.2'];
+    $models = ['gemma:7b-instruct', 'llama3:latest', 'llama2:latest'];
     
     foreach ($models as $model) {
         // Ollama API endpoint with the correct host
