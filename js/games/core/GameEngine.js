@@ -1,7 +1,6 @@
 /**
  * Core Game Engine for AntwortenTrainer Spanish Learning Games
  */
-
 class GameEngine {
     constructor(containerId, options = {}) {
         // Core properties
@@ -157,35 +156,8 @@ class GameEngine {
             this.gameOverElement.style.display = 'block';
         }
         
-        // Save game progress
+        // Save progress to server
         await this.saveProgress();
-        
-        // Show XP notification
-        this.showXPNotification();
-    }
-    
-    showXPNotification() {
-        // Create or get existing notification
-        let notification = document.querySelector('.xp-notification');
-        
-        if (!notification) {
-            notification = document.createElement('div');
-            notification.className = 'xp-notification';
-            document.body.appendChild(notification);
-        }
-        
-        // Set content
-        notification.innerHTML = `<p>¡Ganaste ${this.xpGained} XP!</p>`;
-        
-        // Show notification
-        setTimeout(() => {
-            notification.classList.add('show');
-            
-            // Hide after 3 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }, 500);
     }
     
     async saveProgress() {
@@ -202,23 +174,16 @@ class GameEngine {
                     data: {
                         xp_gained: this.xpGained,
                         difficulty: this.difficulty,
-                        game_specific_data: this.getGameSpecificData()
+                        time_played: this.gameTime - this.timeRemaining
                     }
                 })
             });
             
-            const data = await response.json();
-            
-            if (!data.success) {
-                console.error('Failed to save game progress:', data.error);
-            }
+            const result = await response.json();
+            return result;
         } catch (error) {
             console.error('Error saving game progress:', error);
+            return { success: false, error: error.message };
         }
-    }
-    
-    getGameSpecificData() {
-        // To be implemented by child classes
-        return {};
     }
 }

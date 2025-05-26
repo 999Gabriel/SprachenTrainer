@@ -90,7 +90,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--white);
+    color: var(--gray-800); /* Changed from var(--white) */
     line-height: 1.6;
     background: linear-gradient(45deg, #6a00ff, #ff416c, #ff9a00, #0055ff);
     background-size: 400% 400%;
@@ -1973,7 +1973,7 @@ input:checked + .slider:before {
 
 .profile-initial {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-light); /* Changed from white to use a variable, assuming --text-light is white or a light color intended for dark backgrounds */
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,8 +1,6 @@
 /**
  * Audio Manager for AntwortenTrainer Spanish Learning Games
- * Handles pronunciation and sound effects
  */
-
 class AudioManager {
     constructor() {
         this.sounds = {};
@@ -70,11 +68,5 @@ class AudioManager {
             speechSynthesis.speak(utterance);
             return utterance;
         }
-    }
-    
-    async loadPronunciation(word) {
-        // For future implementation: fetch pronunciation from API
-        // For now, we'll use the Web Speech API
-        return word;
     }
 }

@@ -357,10 +357,6 @@ $page_title = "Home";
                 </div>
                 <!-- Add other pricing cards if needed -->
             </div>
-            <div class="pricing-cta">
-                <a href="signup.php" class="btn btn-primary btn-lg">Get Started Free</a>
-                <p>No credit card required. Start learning Spanish today.</p>
-            </div>
         </div>
     </section>
 

@@ -1,8 +1,6 @@
 /**
  * Vocabulary Manager for AntwortenTrainer Spanish Learning Games
- * Handles loading and managing Spanish vocabulary and verbs
  */
-
 class VocabularyManager {
     constructor(difficulty = 'A1') {
         this.difficulty = difficulty;
@@ -47,22 +45,6 @@ class VocabularyManager {
                             'nosotros': 'hablamos',
                             'vosotros': 'habláis',
                             'ellos/ellas': 'hablan'
-                        },
-                        preterite: {
-                            'yo': 'hablé',
-                            'tú': 'hablaste',
-                            'él/ella': 'habló',
-                            'nosotros': 'hablamos',
-                            'vosotros': 'hablasteis',
-                            'ellos/ellas': 'hablaron'
-                        },
-                        imperfect: {
-                            'yo': 'hablaba',
-                            'tú': 'hablabas',
-                            'él/ella': 'hablaba',
-                            'nosotros': 'hablábamos',
-                            'vosotros': 'hablabais',
-                            'ellos/ellas': 'hablaban'
                         }
                     }
                 },
@@ -78,88 +60,25 @@ class VocabularyManager {
                             'nosotros': 'comemos',
                             'vosotros': 'coméis',
                             'ellos/ellas': 'comen'
-                        },
-                        preterite: {
-                            'yo': 'comí',
-                            'tú': 'comiste',
-                            'él/ella': 'comió',
-                            'nosotros': 'comimos',
-                            'vosotros': 'comisteis',
-                            'ellos/ellas': 'comieron'
-                        },
-                        imperfect: {
-                            'yo': 'comía',
-                            'tú': 'comías',
-                            'él/ella': 'comía',
-                            'nosotros': 'comíamos',
-                            'vosotros': 'comíais',
-                            'ellos/ellas': 'comían'
                         }
                     }
                 },
-                // Add more verbs based on difficulty
                 {
-                    infinitive: 'ser',
-                    translation: 'to be',
+                    infinitive: 'vivir',
+                    translation: 'to live',
                     difficulty: 'A1',
                     tenses: {
                         present: {
-                            'yo': 'soy',
-                            'tú': 'eres',
-                            'él/ella': 'es',
-                            'nosotros': 'somos',
-                            'vosotros': 'sois',
-                            'ellos/ellas': 'son'
-                        },
-                        preterite: {
-                            'yo': 'fui',
-                            'tú': 'fuiste',
-                            'él/ella': 'fue',
-                            'nosotros': 'fuimos',
-                            'vosotros': 'fuisteis',
-                            'ellos/ellas': 'fueron'
-                        },
-                        imperfect: {
-                            'yo': 'era',
-                            'tú': 'eras',
-                            'él/ella': 'era',
-                            'nosotros': 'éramos',
-                            'vosotros': 'erais',
-                            'ellos/ellas': 'eran'
+                            'yo': 'vivo',
+                            'tú': 'vives',
+                            'él/ella': 'vive',
+                            'nosotros': 'vivimos',
+                            'vosotros': 'vivís',
+                            'ellos/ellas': 'viven'
                         }
                     }
                 }
             ];
-            
-            // Add more complex verbs for higher levels
-            if (this.difficulty !== 'A1') {
-                this.verbs.push(
-                    {
-                        infinitive: 'decir',
-                        translation: 'to say',
-                        difficulty: 'A2',
-                        tenses: {
-                            present: {
-                                'yo': 'digo',
-                                'tú': 'dices',
-                                'él/ella': 'dice',
-                                'nosotros': 'decimos',
-                                'vosotros': 'decís',
-                                'ellos/ellas': 'dicen'
-                            },
-                            preterite: {
-                                'yo': 'dije',
-                                'tú': 'dijiste',
-                                'él/ella': 'dijo',
-                                'nosotros': 'dijimos',
-                                'vosotros': 'dijisteis',
-                                'ellos/ellas': 'dijeron'
-                            }
-                        }
-                    }
-                );
-            }
-            
             return this.verbs;
         } catch (error) {
             console.error('Error loading verbs:', error);
@@ -168,114 +87,98 @@ class VocabularyManager {
     }
     
     async loadNouns() {
-        // Sample nouns data
-        this.nouns = [
-            { word: 'casa', translation: 'house', gender: 'f', difficulty: 'A1' },
-            { word: 'perro', translation: 'dog', gender: 'm', difficulty: 'A1' },
-            { word: 'gato', translation: 'cat', gender: 'm', difficulty: 'A1' },
-            { word: 'libro', translation: 'book', gender: 'm', difficulty: 'A1' },
-            { word: 'mesa', translation: 'table', gender: 'f', difficulty: 'A1' }
-        ];
-        
-        return this.nouns;
+        try {
+            this.nouns = [
+                { spanish: 'casa', translation: 'house', gender: 'f', difficulty: 'A1' },
+                { spanish: 'perro', translation: 'dog', gender: 'm', difficulty: 'A1' },
+                { spanish: 'gato', translation: 'cat', gender: 'm', difficulty: 'A1' },
+                { spanish: 'libro', translation: 'book', gender: 'm', difficulty: 'A1' },
+                { spanish: 'mesa', translation: 'table', gender: 'f', difficulty: 'A1' }
+            ];
+            return this.nouns;
+        } catch (error) {
+            console.error('Error loading nouns:', error);
+            return [];
+        }
     }
     
     async loadAdjectives() {
-        // Sample adjectives data
-        this.adjectives = [
-            { word: 'grande', translation: 'big', difficulty: 'A1' },
-            { word: 'pequeño', translation: 'small', difficulty: 'A1' },
-            { word: 'bonito', translation: 'pretty', difficulty: 'A1' },
-            { word: 'feo', translation: 'ugly', difficulty: 'A1' },
-            { word: 'nuevo', translation: 'new', difficulty: 'A1' }
-        ];
-        
-        return this.adjectives;
+        try {
+            this.adjectives = [
+                { spanish: 'grande', translation: 'big', difficulty: 'A1' },
+                { spanish: 'pequeño', translation: 'small', difficulty: 'A1' },
+                { spanish: 'bueno', translation: 'good', difficulty: 'A1' },
+                { spanish: 'malo', translation: 'bad', difficulty: 'A1' },
+                { spanish: 'bonito', translation: 'pretty', difficulty: 'A1' }
+            ];
+            return this.adjectives;
+        } catch (error) {
+            console.error('Error loading adjectives:', error);
+            return [];
+        }
     }
     
     async loadPhrases() {
-        // Sample phrases data
-        this.phrases = [
-            { 
-                spanish: '¿Cómo estás?', 
-                translation: 'How are you?', 
-                difficulty: 'A1',
-                context: 'greeting'
-            },
-            { 
-                spanish: 'Me gustaría un café, por favor.', 
-                translation: 'I would like a coffee, please.', 
-                difficulty: 'A1',
-                context: 'restaurant'
-            },
-            { 
-                spanish: '¿Dónde está el baño?', 
-                translation: 'Where is the bathroom?', 
-                difficulty: 'A1',
-                context: 'public place'
-            }
-        ];
-        
-        return this.phrases;
-    }
-    
-    getRandomVerbs(count = 5, tense = null) {
-        if (!this.loaded) {
-            console.warn('Vocabulary not loaded yet');
+        try {
+            this.phrases = [
+                { spanish: 'Buenos días', translation: 'Good morning', difficulty: 'A1' },
+                { spanish: '¿Cómo estás?', translation: 'How are you?', difficulty: 'A1' },
+                { spanish: 'Me llamo...', translation: 'My name is...', difficulty: 'A1' },
+                { spanish: 'Mucho gusto', translation: 'Nice to meet you', difficulty: 'A1' },
+                { spanish: '¿Dónde está...?', translation: 'Where is...?', difficulty: 'A1' }
+            ];
+            return this.phrases;
+        } catch (error) {
+            console.error('Error loading phrases:', error);
             return [];
         }
-        
-        // Filter by difficulty if needed
-        let filteredVerbs = this.verbs.filter(verb => 
-            this.difficulty === 'A1' ? verb.difficulty === 'A1' : true
-        );
-        
-        // Shuffle and take requested count
-        return this.shuffle(filteredVerbs).slice(0, count);
     }
     
-    getRandomNouns(count = 5) {
-        if (!this.loaded) return [];
+    getRandomVerb(count = 1) {
+        if (this.verbs.length === 0) return [];
         
-        let filteredNouns = this.nouns.filter(noun => 
-            this.difficulty === 'A1' ? noun.difficulty === 'A1' : true
-        );
-        
-        return this.shuffle(filteredNouns).slice(0, count);
-    }
-    
-    getRandomAdjectives(count = 5) {
-        if (!this.loaded) return [];
-        
-        let filteredAdjectives = this.adjectives.filter(adj => 
-            this.difficulty === 'A1' ? adj.difficulty === 'A1' : true
-        );
-        
-        return this.shuffle(filteredAdjectives).slice(0, count);
-    }
-    
-    getRandomPhrases(count = 5, context = null) {
-        if (!this.loaded) return [];
-        
-        let filteredPhrases = this.phrases;
-        
-        if (context) {
-            filteredPhrases = filteredPhrases.filter(phrase => phrase.context === context);
+        const result = [];
+        for (let i = 0; i < count; i++) {
+            const randomIndex = Math.floor(Math.random() * this.verbs.length);
+            result.push(this.verbs[randomIndex]);
         }
         
-        filteredPhrases = filteredPhrases.filter(phrase => 
-            this.difficulty === 'A1' ? phrase.difficulty === 'A1' : true
-        );
-        
-        return this.shuffle(filteredPhrases).slice(0, count);
+        return count === 1 ? result[0] : result;
     }
     
-    shuffle(array) {
-        const newArray = [...array];
-        for (let i = newArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    getRandomNoun(count = 1) {
+        if (this.nouns.length === 0) return [];
+        
+        const result = [];
+        for (let i = 0; i < count; i++) {
+            const randomIndex = Math.floor(Math.random() * this.nouns.length);
+            result.push(this.nouns[randomIndex]);
         }
-        return newArray;
+        
+        return count === 1 ? result[0] : result;
+    }
+    
+    getRandomAdjective(count = 1) {
+        if (this.adjectives.length === 0) return [];
+        
+        const result = [];
+        for (let i = 0; i < count; i++) {
+            const randomIndex = Math.floor(Math.random() * this.adjectives.length);
+            result.push(this.adjectives[randomIndex]);
+        }
+        
+        return count === 1 ? result[0] : result;
+    }
+    
+    getRandomPhrase(count = 1) {
+        if (this.phrases.length === 0) return [];
+        
+        const result = [];
+        for (let i = 0; i < count; i++) {
+            const randomIndex = Math.floor(Math.random() * this.phrases.length);
+            result.push(this.phrases[randomIndex]);
+        }
+        
+        return count === 1 ? result[0] : result;
     }
 }
