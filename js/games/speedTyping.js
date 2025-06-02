@@ -150,4 +150,87 @@ class SpeedTypingGame extends GameEngine {
     }
     
     submitAnswer() {
-        if (!this.
+        if (!this.gameActive || !this.currentWord) return;
+
+        const typedWord = this.typingInputElement.value.trim();
+        this.wordsTyped++;
+
+        if (typedWord === this.currentWord.text) {
+            this.correctWords++;
+            this.score += 10; // Or some other scoring logic
+            this.audioManager.playSound('correct');
+            // Add visual feedback for correct answer if desired
+        } else {
+            this.audioManager.playSound('incorrect');
+            // Add visual feedback for incorrect answer if desired
+        }
+
+        this.updateStats();
+
+        // For this game, we might want to continue until a certain time limit or number of words
+        // Let's assume the game continues for a set duration managed by GameEngine's timer
+        if (this.gameActive) { // gameActive might be set to false by updateTimer
+            this.nextWord();
+        } else {
+            // If gameActive became false (e.g. timer ran out), endGame would have been called by GameEngine
+            // Or, if we want to end based on words typed:
+            // if (this.wordsTyped >= MAX_WORDS_PER_GAME) { this.endGame(); }
+        }
+    }
+
+    updateStats() {
+        const currentTime = Date.now();
+        const timeElapsedInMinutes = (currentTime - this.startTime) / 60000;
+
+        if (timeElapsedInMinutes > 0) {
+            this.wpm = Math.round(this.correctWords / timeElapsedInMinutes);
+        } else {
+            this.wpm = 0;
+        }
+
+        if (this.wordsTyped > 0) {
+            this.accuracy = Math.round((this.correctWords / this.wordsTyped) * 100);
+        } else {
+            this.accuracy = 0;
+        }
+
+        if (this.wpmElement) {
+            this.wpmElement.textContent = this.wpm;
+        }
+        if (this.accuracyElement) {
+            this.accuracyElement.textContent = `${this.accuracy}%`;
+        }
+    }
+
+    // Override endGame to display final stats for this specific game
+    endGame() {
+        super.endGame(); // This will handle saving progress via API
+
+        // Display final stats
+        if (this.finalWpmElement) {
+            this.finalWpmElement.textContent = this.wpm;
+        }
+        if (this.finalAccuracyElement) {
+            this.finalAccuracyElement.textContent = `${this.accuracy}%`;
+        }
+
+        // Hide game play area, show game over screen (which should contain final stats elements)
+        if (this.gamePlayArea) {
+            this.gamePlayArea.style.display = 'none';
+        }
+        // The GameEngine's endGame method already shows the game over screen
+        // We just need to make sure the final stats are populated before it's shown
+        // or update them if it's already visible.
+    }
+
+    // GameEngine's updateTimer will call endGame when time is up.
+    // We can add specific logic here if needed, but for now, GameEngine's default behavior is fine.
+    // updateTimer(currentTime) {
+    //     super.updateTimer(currentTime);
+    //     // Additional logic for SpeedTypingGame if necessary
+    // }
+}
+
+// Ensure the class is available globally or instantiated appropriately when the game is selected.
+// Example: let currentGame = new SpeedTypingGame('game-container-id', { difficulty: 'easy', gameTimeLimit: 60 });
+// currentGame.init().then(() => currentGame.startGame());
