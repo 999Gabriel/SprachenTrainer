@@ -508,8 +508,8 @@ $page_title = "Sentence Builder Game";
     </style>
 </head>
 <body>
-    <a href="../lessons.php" class="back-btn">
-        <i class="fas fa-arrow-left"></i> Back to Lessons
+    <a href="../practice.php" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Practice
     </a>
 
     <div class="game-container">

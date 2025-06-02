@@ -119,7 +119,7 @@ $page_title = "Vokabeltraining";
                 </div>
                 
                 <div class="start-button">
-                    <a href="practice-continue.php" class="btn btn-primary">Start</a>
+                    <a href="/games/sentenceBuilder.php" class="btn btn-primary">Start</a>
                 </div>
                 
                 <div class="chapter-description">
