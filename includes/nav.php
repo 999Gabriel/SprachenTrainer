@@ -9,7 +9,6 @@
         <div class="nav-links">
             <!-- Links relevant to logged-in user -->
             <a href="dashboard.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : ''; ?>">Dashboard</a>
-            <a href="lessons.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'lessons.php' ? 'active' : ''; ?>">Lessons</a>
             <a href="practice.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'practice.php' ? 'active' : ''; ?>">Practice</a>
             <a href="ai-conversation.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'ai-conversation.php' ? 'active' : ''; ?>">AI Conversation</a>
             <a href="camera-learning.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'camera-learning.php' ? 'active' : ''; ?>">Visual Learning</a>

@@ -370,7 +370,6 @@ $day_names = [
             </div>
             <div class="nav-links">
                 <a href="dashboard.php" class="nav-link active">Dashboard</a>
-                <a href="lessons.php" class="nav-link">Lessons</a>
                 <a href="practice.php" class="nav-link">Practice</a>
                 <a href="ai-conversation.php" class="nav-link">AI Conversation</a>
                 <a href="camera-learning.php" class="nav-link">Visual Learning</a>
