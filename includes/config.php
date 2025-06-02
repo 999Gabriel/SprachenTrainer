@@ -30,8 +30,8 @@ try {
 } catch (PDOException $e) {
     // Log the error but don't expose details to users
     error_log("Database connection error: " . $e->getMessage());
-    // For debugging only - remove in production
-    // echo "Connection failed: " . $e->getMessage();
+    // Für Debugging - in der Produktion entfernen
+    echo "Verbindungsfehler: " . $e->getMessage();
 }
 
 // Site configuration

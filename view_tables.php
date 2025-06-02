@@ -2,6 +2,11 @@
 // Include configuration
 require_once "includes/config.php";
 
+// Überprüfen, ob $pdo existiert
+if (!isset($pdo) || $pdo === null) {
+    die("Datenbankverbindung konnte nicht hergestellt werden. Bitte überprüfen Sie die Konfiguration.");
+}
+
 // Get all tables
 $stmt = $pdo->query("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name");
 $tables = $stmt->fetchAll(PDO::FETCH_COLUMN);
