@@ -37,15 +37,12 @@ CerveLingua offers a rich set of features to cater to various learning styles an
 Here's a glimpse of what CerveLingua offers. (Consider adding more screenshots of your actual platform!)
 
 **AI Conversation Setup:**
-*(Imagine a screenshot here showing the user selecting topic, level, and mode for AI chat)*
 `![AI Conversation Setup](img/AI-chat.png)
 
 **Sentence Builder Game in Action:**
-*(Imagine a screenshot here showing the Sentence Builder game interface)*
 `![Sentence Builder Game](img/sentence_builder.png)
 
 **User Dashboard / Progress:**
-*(Imagine a screenshot here showing the user's dashboard with XP and level)*
 ![User Dashboard](img/dashboard_img.png)
 
 ## 🚀 Technologies Powering CerveLingua
