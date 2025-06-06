@@ -38,15 +38,15 @@ Here's a glimpse of what CerveLingua offers. (Consider adding more screenshots o
 
 **AI Conversation Setup:**
 *(Imagine a screenshot here showing the user selecting topic, level, and mode for AI chat)*
-`<!-- ![AI Conversation Setup](path/to/your/screenshot_ai_setup.png) -->`
+`![AI Conversation Setup](img/AI-chat.png)
 
 **Sentence Builder Game in Action:**
 *(Imagine a screenshot here showing the Sentence Builder game interface)*
-`<!-- ![Sentence Builder Game](path/to/your/screenshot_sentence_builder.png) -->`
+`![Sentence Builder Game](img/sentence_builder.png)
 
 **User Dashboard / Progress:**
 *(Imagine a screenshot here showing the user's dashboard with XP and level)*
-`<!-- ![User Dashboard](path/to/your/screenshot_dashboard.png) -->`
+![User Dashboard](img/dashboard_img.png)
 
 ## 🚀 Technologies Powering CerveLingua
 
