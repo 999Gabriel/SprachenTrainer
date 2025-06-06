@@ -123,7 +123,7 @@ $page_title = "Vokabeltraining";
                 </div>
                 
                 <div class="chapter-description">
-                    <p>Informationen über das jetzige Kapitel</p>
+                    <p>Fange jetzt an zu lernen.</p>
                 </div>
             </div>
             
@@ -136,7 +136,7 @@ $page_title = "Vokabeltraining";
                     </div>
                     
                     <div class="vocabulary-review">
-                        <a href="practice-review.php" class="btn btn-secondary">Gelernte Vokabeln wiederholen</a>
+                        <a href="dashboard.php" class="btn btn-secondary">Schaue dir deinen Fortschritt an!</a>
                     </div>
                 </div>
             </div>

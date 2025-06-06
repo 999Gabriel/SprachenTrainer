@@ -503,8 +503,8 @@ $day_names = [
         
         <!-- Quick Actions -->
         <div class="quick-actions">
-            <a href="lessons.php" class="action-button">
-                <i class="fas fa-book"></i> Lektionen
+            <a href="camera-learning.php" class="action-button">
+                <i class="fas fa-book"></i> Lernen mit Kamera
             </a>
             <a href="practice.php" class="action-button practice">
                 <i class="fas fa-dumbbell"></i> Üben
