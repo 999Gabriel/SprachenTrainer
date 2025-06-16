@@ -264,12 +264,12 @@ try {
     ];
     $streak_calendar[date('N')-1]['active'] = true;
     $streak_calendar[date('N')-1]['today'] = true;
-    
+
     $all_levels = [
         ['level_id' => 1, 'level_number' => 1, 'title' => 'Pollito („Küken")', 'emoji' => '🐣'],
         ['level_id' => 2, 'level_number' => 2, 'title' => 'Torete („junger Bulle")', 'emoji' => '🐮'],
         ['level_id' => 3, 'level_number' => 3, 'title' => 'Zorro Listo („Schlauer Fuchs")', 'emoji' => '🦊'],
-        ['level_id' => 4, 'level_number' => 4, 'title' => 'Lince Lingüístico („Sprachluchs")', 'emoji' => '🐱‍👤'],
+        ['level_id' => 4, 'level_number' => 4, 'title' => 'Lince Lingüístico („Sprachluchs")', 'emoji' => '🐱'], // Corrected emoji
         ['level_id' => 5, 'level_number' => 5, 'title' => 'Toro Bravo („Kampfstier")', 'emoji' => '🐂'],
         ['level_id' => 6, 'level_number' => 6, 'title' => 'Matador de Errores („Fehler-Matador")', 'emoji' => '🗡'],
         ['level_id' => 7, 'level_number' => 7, 'title' => 'Pantera („Schwarzer Panther")', 'emoji' => '🐆'],

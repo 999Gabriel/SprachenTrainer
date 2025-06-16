@@ -1169,6 +1169,7 @@ $page_title = "Sentence Builder Game";
         resetWords();
     });
 
+    // Reset words - FIXED VERSION
     function resetWords() {
         // Move all words back to word bank
         const sentenceWords = sentenceArea.querySelectorAll('.sentence-word');
@@ -1178,17 +1179,17 @@ $page_title = "Sentence Builder Game";
             newWord.textContent = word.textContent;
             newWord.setAttribute('draggable', 'true');
             wordBank.appendChild(newWord);
+
+            // Remove the word from sentence area
+            word.remove();
         });
 
-        // Clear sentence area
-        while (sentenceArea.firstChild) {
-            if (sentenceArea.firstChild !== emptyText) {
-                sentenceArea.removeChild(sentenceArea.firstChild);
-            }
-        }
-
-        // Show empty text
+        // Show empty text if it's not already visible
         emptyText.style.display = 'block';
+
+        // Hide feedback if visible
+        feedback.style.display = 'none';
+        solutionDisplay.style.display = 'none';
     }
 
     // Next challenge
